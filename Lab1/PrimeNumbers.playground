@@ -1,0 +1,69 @@
+import UIKit
+
+func printPrimeNumbers(num1: Int, num2: Int) {
+    for i in num1...num2 {
+        var isPrime = true
+        if i < 2 {
+            isPrime = false
+        }
+        else {
+            for j in 2..<i {
+                if i % j == 0 {
+                    isPrime = false
+                    break
+                }
+            }
+        }
+        if isPrime {
+            print(i)
+        }
+    }
+}
+
+func getPrimeNumbers(num1: Int, num2: Int) -> Array<Int> {
+    var primeArray = [Int]()
+    for i in num1...num2 {
+        var isPrime = true
+        if i < 2 {
+            isPrime = false
+        }
+        else {
+            for j in 2..<i {
+                if i % j == 0 {
+                    isPrime = false
+                    break
+                }
+            }
+        }
+        if isPrime {
+            primeArray.append(i)
+        }
+    }
+    return primeArray
+}
+
+var PrimeNumbers: (Int, Int) -> Array<Int> = {
+    var primeArray = [Int]()
+    for i in $0...$1 {
+        var isPrime = true
+        if i < 2 {
+            isPrime = false
+        }
+        else {
+            for j in 2..<i {
+                if i % j == 0 {
+                    isPrime = false
+                    break
+                }
+            }
+        }
+        if isPrime {
+            primeArray.append(i)
+        }
+    }
+    return primeArray
+}
+
+printPrimeNumbers(num1: 1, num2: 50)
+print(getPrimeNumbers(num1: 1, num2: 50))
+print(PrimeNumbers(1,50))
