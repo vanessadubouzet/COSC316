@@ -1,0 +1,55 @@
+// 
+
+import UIKit
+
+struct Employee {
+    let name: String?
+    let id: String? 
+    let jobtitle: String?
+    let yearOfService: Int?
+    let annualsalary: Double?
+
+    init(name: String? = nil, id: String? = nil, title: String? = nil, year: Int? = nil, salary: Double? = nil) {
+        self.name = name
+        self.id = id
+        jobtitle = title
+        yearOfService = year
+        annualsalary = salary
+    }
+}
+
+// Create an array of Employee
+let peterLong = Employee(name: "Peter Long", id: "112-22-3011", title: "Volunteer Worker", year: 5, salary: 1200.00)
+let martineShort = Employee(name: "Martine Short", id: "116-23-6418", title: "Manager", year: 8, salary: 78600.00)
+let susanJohnson = Employee(name: "Susan Johnson", id: "123-32-3515", title: "Receptionist", year: 10, salary: 38600.00)
+let paulSimon = Employee(name: "Paul Simon", id: "133-53-4019", title: "System Support Analyst", year: 8, salary: 65000.00)
+
+let employees: [Employee] = [peterLong, martineShort, susanJohnson, paulSimon]
+
+for employee in employees {
+    if let name = employee.name,
+       let id = employee.id,
+       let jobTitle = employee.jobtitle,
+       let yearsOfService = employee.yearOfService,
+       let annualSalary = employee.annualsalary {
+        print("\(name) \t \(id) \t \(jobTitle) \t \(yearsOfService) \t \(annualSalary)")
+    }
+}
+
+print("\n")
+
+let dict_employees: [String: Employee] = [
+    "112-22-3011": peterLong,
+    "116-23-6418": martineShort,
+    "123-32-3515": susanJohnson,
+    "133-53-4019": paulSimon
+]
+
+for (id, employee) in dict_employees {
+    if let name = employee.name,
+       let jobTitle = employee.jobtitle,
+       let yearsOfService = employee.yearOfService,
+       let annualSalary = employee.annualsalary {
+        print("\(id) \t \(name) \t \(jobTitle) \t \(yearsOfService) \t \(annualSalary)")
+    }
+}

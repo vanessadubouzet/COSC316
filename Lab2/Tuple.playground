@@ -1,0 +1,55 @@
+import UIKit
+
+typealias Employee = (name: String, id: String, jobtitle: String, yearOfService: Int, annualsalary: Double)
+
+let peterLong = Employee(name: "Peter Long", id: "112-22-3011", jobtitle: "Volunteer Worker", yearOfService: 5, annualsalary: 1200.00)
+let martineShort = Employee(name: "Martine Short", id: "116-23-6418", jobtitle: "Manager", yearOfService: 8, annualsalary: 78600.00)
+let susanJohnson = Employee(name: "Susan Johnson", id: "123-32-3515", jobtitle: "Receptionist", yearOfService: 10, annualsalary: 38600.00)
+let paulSimon = Employee(name: "Paul Simon", id: "133-53-4019", jobtitle: "System Support Analyst", yearOfService: 8, annualsalary: 65000.00)
+
+let employees: [Employee] = [peterLong, martineShort, susanJohnson, paulSimon]
+
+for e in employees {
+    print("\(e.name)\t\t\(e.id)\t\t\(e.jobtitle)")
+}
+
+func highestSalary(emps: [Employee]) -> Employee {
+    var highestPaidEmployee = emps[0]
+    
+    for employee in emps {
+        if employee.annualsalary > highestPaidEmployee.annualsalary {
+            highestPaidEmployee = employee
+        }
+    }
+    return highestPaidEmployee
+}
+
+let highestPaid = highestSalary(emps: employees)
+print("\nHighest paid employee: (name: \"\(highestPaid.name)\", id: \"\(highestPaid.id)\", jobtitle: \"\(highestPaid.jobtitle)\", yearOfService: \(highestPaid.yearOfService), annualService: \(highestPaid.annualsalary))")
+
+
+print("\n")
+var dict_employees = [String: Employee]()
+
+for e in employees {
+    dict_employees[e.id] = e
+}
+
+for (id, employee) in dict_employees {
+    print("\(id)\t\t\(employee.name)\t\t\(employee.jobtitle)")
+}
+
+func highestSalary(emps: [String: Employee]) -> Employee? {
+    var highestPaidEmployee: Employee?
+
+    for employee in emps {
+        if highestPaidEmployee == nil || employee.value.annualsalary > highestPaidEmployee!.annualsalary {
+            highestPaidEmployee = employee.value
+        }
+    }
+    return highestPaidEmployee
+}
+
+if let highestPaid = highestSalary(emps: dict_employees){
+    print("\nHighest paid employee: (name: \"\(highestPaid.name)\", id: \"\(highestPaid.id)\", jobtitle: \"\(highestPaid.jobtitle)\", yearOfService: \(highestPaid.yearOfService), annualService: \(highestPaid.annualsalary))")
+}
