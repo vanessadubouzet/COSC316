@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LabelButtonTextFieldImage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forest_park" translatesAutoresizingMaskIntoConstraints="NO" id="ibe-Ib-LcW">
+                                <rect key="frame" x="37" y="487" width="345" height="274"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hK-sq-QMo">
+                                <rect key="frame" x="164" y="409" width="86" height="30"/>
+                                <color key="backgroundColor" red="0.79366765796506156" green="0.90699886658031093" blue="0.87884526370951221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="kVY-Vg-ElR"/>
+                                </constraints>
+                                <state key="normal" title="Click Me"/>
+                                <connections>
+                                    <action selector="getInput:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fEU-Vt-kEw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hello, " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBG-l4-YOG">
+                                <rect key="frame" x="100" y="201" width="215" height="32"/>
+                                <color key="backgroundColor" red="0.83975498820000005" green="1" blue="0.98144524879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="Fpb-ex-Wh1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bT6-36-nhW">
+                                <rect key="frame" x="128" y="323" width="156" height="30"/>
+                                <color key="backgroundColor" red="0.83975498820000005" green="1" blue="0.98144524879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bT6-36-nhW" secondAttribute="trailing" constant="130" id="1uF-Fi-ZZv"/>
+                            <constraint firstItem="lBG-l4-YOG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="29l-CD-4Mi"/>
+                            <constraint firstItem="lBG-l4-YOG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="157" id="DxA-4l-UuT"/>
+                            <constraint firstItem="1hK-sq-QMo" firstAttribute="top" secondItem="bT6-36-nhW" secondAttribute="bottom" constant="56" id="FQh-Gk-OUE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ibe-Ib-LcW" secondAttribute="trailing" constant="32" id="TnJ-aT-Ex3"/>
+                            <constraint firstItem="ibe-Ib-LcW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="W9K-Rb-jy2"/>
+                            <constraint firstItem="1hK-sq-QMo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="409" id="ZYW-Di-NDA"/>
+                            <constraint firstItem="lBG-l4-YOG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="alP-KF-ulJ"/>
+                            <constraint firstItem="ibe-Ib-LcW" firstAttribute="top" secondItem="1hK-sq-QMo" secondAttribute="bottom" constant="48" id="auS-Rs-0Dr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ibe-Ib-LcW" secondAttribute="bottom" constant="101" id="eKc-da-aYW"/>
+                            <constraint firstItem="1hK-sq-QMo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="164" id="iZx-Hm-zh5"/>
+                            <constraint firstItem="lBG-l4-YOG" firstAttribute="centerX" secondItem="1hK-sq-QMo" secondAttribute="centerX" id="ig1-Gy-hYb"/>
+                            <constraint firstItem="bT6-36-nhW" firstAttribute="top" secondItem="lBG-l4-YOG" secondAttribute="bottom" constant="90" id="r39-MY-E14"/>
+                            <constraint firstItem="bT6-36-nhW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="128" id="ulr-m6-XSE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="inputTextfield" destination="bT6-36-nhW" id="edn-vW-f1D"/>
+                        <outlet property="outputLabel" destination="lBG-l4-YOG" id="PNG-xG-6DU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="120.53571428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="forest_park" width="2448" height="1883"/>
+    </resources>
+</document>
