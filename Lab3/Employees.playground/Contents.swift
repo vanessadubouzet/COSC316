@@ -88,3 +88,28 @@ print("-------------------------------------------------------")
 var emp4 = HourlyEmployee(Name:"Paul Simon", ID:"133-53-4019", JobTitle:"System Support Analyst", YearsOfService:4, HourlyRate: 22.0, HoursWorked: 75)
 print(emp4.toString())
 print("-------------------------------------------------------")
+
+class Executive: SalaryEmployee {
+    var bonus: Double
+    override init(Name: String, ID: String, JobTitle: String, YearsOfService: Int, AnnualSalary: Double) {
+        self.bonus = 0
+        super.init(Name: Name, ID: ID, JobTitle: JobTitle, YearsOfService: YearsOfService, AnnualSalary: AnnualSalary)
+    }
+    
+    override func pay() -> Double {
+        return bonus + super.pay()
+    }
+    
+    override func toString() -> String {
+        return super.toString() + "\n Paycheck Amount: $\(pay()) \n Bonus Awarded: $\(bonus)"
+    }
+}
+
+var emp5 = Executive(Name: "Steve Job", ID: "111-22-3333", JobTitle: "CEO", YearsOfService: 25, AnnualSalary: 1000000.0)
+print (emp5.toString())
+print ("\n----------------------------------------------------")
+print ("3% bonus to be awarded for this paycheck:\n")
+emp5.bonus = emp5.pay() * 0.03
+print (emp5.toString())
+emp5.bonus = 0.0
+print ("-------------------------------------------------------")
