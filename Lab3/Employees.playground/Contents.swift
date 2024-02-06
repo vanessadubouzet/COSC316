@@ -55,3 +55,36 @@ class SalaryEmployee: Employee {
 var emp2 = SalaryEmployee(Name:"Martine Short", ID:"116-23-6418", JobTitle:"Manager",YearsOfService:8, AnnualSalary: 78600.00)
 print (emp2.toString())
 print("---------------------------------------------------------")
+
+class HourlyEmployee: Employee {
+    var hourlyrate: Double
+    var hoursworked: Double
+    
+    init(Name: String, ID: String, JobTitle: String, YearsOfService: Int, HourlyRate: Double, HoursWorked: Double) {
+        self.hourlyrate = HourlyRate
+        self.hoursworked = HoursWorked
+        super.init(Name: Name, ID: ID, JobTitle: JobTitle, YearsOfService: YearsOfService)
+    }
+    
+    override func pay() -> Double {
+        var payCheck: Double = 0.0
+        if hoursworked <= 80 {
+            payCheck = hourlyrate * hoursworked
+        } else if hoursworked > 80 {
+            payCheck = (hourlyrate * 80.0 + hourlyrate * (hoursworked - 80.0) * 1.5)
+        }
+        return payCheck
+    }
+    
+    override func toString() -> String {
+        return super.toString() + "\n Hourly Rate: $\(hourlyrate)\n Hours Worked: \(hoursworked)\n Paycheck Amount: $\(pay())"
+    }
+}
+
+var emp3 = HourlyEmployee(Name:"Susan Johnson", ID:"123-32-3515", JobTitle:"Receptionist", YearsOfService:10, HourlyRate: 16, HoursWorked: 84)
+print(emp3.toString())
+print("-------------------------------------------------------")
+
+var emp4 = HourlyEmployee(Name:"Paul Simon", ID:"133-53-4019", JobTitle:"System Support Analyst", YearsOfService:4, HourlyRate: 22.0, HoursWorked: 75)
+print(emp4.toString())
+print("-------------------------------------------------------")
