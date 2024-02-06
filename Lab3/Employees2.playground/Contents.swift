@@ -13,25 +13,26 @@ class Employee {
         self.YearsOfService = YearsOfService
     }
     
-    func pay() -> Double {
-        return 100.00
+    var description: String {
+        return "Name: \(EmployeeName)\n ID: \(EmployeeID)\n Title: \(JobTitle)\n Years of Service: \(YearsOfService)"
     }
     
-    func toString() -> String {
-        return "Name: \(EmployeeName)\n ID: \(EmployeeID)\n Title: \(JobTitle)\n Years of Service: \(YearsOfService)"
+    func pay() -> Double {
+        return 100.00
     }
 }
 
 class Volunteer: Employee{
     var reimbursment: Double = 100.00;
     
-    override func toString() -> String {
-        return super.toString() + "\n Reimburstment amount: $\(reimbursment)\n Thank you for your volunteer work and time!"
+    override var description: String {
+        return super.description + "\n Reimburstment amount: $\(reimbursment)\n Thank you for your volunteer work and time!"
     }
 }
 
 var emp1 = Volunteer(Name: "Peter Long", ID: "112-22-3011", JobTitle: "Volunteer Worker", YearsOfService: 5)
-print(emp1.toString())
+    
+print(emp1.description)
 print("---------------------------------------------------------")
 
 class SalaryEmployee: Employee {
@@ -47,13 +48,13 @@ class SalaryEmployee: Employee {
         return round(payCheck)
     }
     
-    override func toString() -> String {
-        return super.toString() + "\n Annual Salary: $\(annualsalary) \n Paycheck Amount: $\(pay())"
+    override var description: String {
+        return super.description + "\n Annual Salary: $\(annualsalary) \n Paycheck Amount: $\(pay())"
     }
 }
 
 var emp2 = SalaryEmployee(Name:"Martine Short", ID:"116-23-6418", JobTitle:"Manager",YearsOfService:8, AnnualSalary: 78600.00)
-print (emp2.toString())
+print (emp2.description)
 print("---------------------------------------------------------")
 
 class HourlyEmployee: Employee {
@@ -76,17 +77,17 @@ class HourlyEmployee: Employee {
         return payCheck
     }
     
-    override func toString() -> String {
-        return super.toString() + "\n Hourly Rate: $\(hourlyrate)\n Hours Worked: \(hoursworked)\n Paycheck Amount: $\(pay())"
+    override var description: String {
+        return super.description + "\n Hourly Rate: $\(hourlyrate)\n Hours Worked: \(hoursworked)\n Paycheck Amount: $\(pay())"
     }
 }
 
 var emp3 = HourlyEmployee(Name:"Susan Johnson", ID:"123-32-3515", JobTitle:"Receptionist", YearsOfService:10, HourlyRate: 16, HoursWorked: 84)
-print(emp3.toString())
+print(emp3.description)
 print("-------------------------------------------------------")
 
 var emp4 = HourlyEmployee(Name:"Paul Simon", ID:"133-53-4019", JobTitle:"System Support Analyst", YearsOfService:4, HourlyRate: 22.0, HoursWorked: 75)
-print(emp4.toString())
+print(emp4.description)
 print("-------------------------------------------------------")
 
 class Executive: SalaryEmployee {
@@ -100,17 +101,17 @@ class Executive: SalaryEmployee {
         return bonus + super.pay()
     }
     
-    override func toString() -> String {
-        return super.toString() + "\n Paycheck Amount: $\(pay()) \n Bonus Awarded: $\(bonus)"
+    override var description: String {
+        return super.description + "\n Paycheck Amount: $\(pay()) \n Bonus Awarded: $\(bonus)"
     }
 }
 
 var emp5 = Executive(Name: "Steve Job", ID: "111-22-3333", JobTitle: "CEO", YearsOfService: 25, AnnualSalary: 1000000.0)
-print (emp5.toString())
+print (emp5.description)
 print ("\n----------------------------------------------------")
 print ("3% bonus to be awarded for this paycheck:\n")
 emp5.bonus = emp5.pay() * 0.03
-print (emp5.toString())
+print (emp5.description)
 emp5.bonus = 0.0
 print ("-------------------------------------------------------")
 
@@ -119,12 +120,12 @@ print("\n 5. POLYMORPHIC REF ------------------- \n ")
 var employees: [Employee] = [emp1, emp2, emp3, emp4, emp5]
 
 for emp in employees {
-    print (emp.toString())
+    print (emp.description)
     print ("---------------------------")
     if let executive = emp as? Executive {
         print ("3% bonus to be awarded for this paycheck:\n")
         emp5.bonus = emp5.pay() * 0.03
-        print (emp.toString())
+        print (emp.description)
         emp5.bonus = 0.0
         print ("---------------------------")
     }
@@ -141,12 +142,12 @@ var employeesDictionary: [String: Employee] = [
 ]
 
 for (empID, emp) in employeesDictionary {
-    print (emp.toString())
+    print (emp.description)
     print ("---------------------------")
     if let executive = emp as? Executive {
         print ("3% bonus to be awarded for this paycheck:\n")
         emp5.bonus = emp5.pay() * 0.03
-        print (emp.toString())
+        print (emp.description)
         emp5.bonus = 0.0
         print ("---------------------------")
     }
