@@ -113,3 +113,40 @@ emp5.bonus = emp5.pay() * 0.03
 print (emp5.toString())
 emp5.bonus = 0.0
 print ("-------------------------------------------------------")
+
+print("\n 5. POLYMORPHIC REF ------------------- \n ")
+
+var employees: [Employee] = [emp1, emp2, emp3, emp4, emp5]
+
+for emp in employees {
+    print (emp.toString())
+    print ("---------------------------")
+    if let executive = emp as? Executive {
+        print ("3% bonus to be awarded for this paycheck:\n")
+        emp5.bonus = emp5.pay() * 0.03
+        print (emp.toString())
+        emp5.bonus = 0.0
+        print ("---------------------------")
+    }
+}
+
+print("\n 6. DICTIONARY ------------------- \n ")
+
+var employeesDictionary: [String: Employee] = [
+    emp1.EmployeeID: emp1,
+    emp2.EmployeeID: emp2,
+    emp3.EmployeeID: emp3,
+    emp4.EmployeeID: emp4,
+    emp5.EmployeeID: emp5
+]
+
+for (empID, emp) in employeesDictionary {
+    print (emp.toString())
+    print ("---------------------------")
+    if let executive = emp as? Executive {
+        print ("3% bonus to be awarded for this paycheck:\n")
+        emp5.bonus = emp5.pay() * 0.03
+        print (emp.toString())
+        print ("---------------------------")
+    }
+}
