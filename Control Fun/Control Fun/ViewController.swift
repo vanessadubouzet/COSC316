@@ -36,5 +36,9 @@ class ViewController: UIViewController {
         numberField.resignFirstResponder()
     }
     
+    @IBAction func onSliderChanged(_ sender: UISlider) {
+        sliderLabel.text = "\(lroundf(sender.value))"
+    }
+    
 }
 
