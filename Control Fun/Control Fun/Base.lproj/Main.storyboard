@@ -91,7 +91,7 @@
                                 </connections>
                             </switch>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYY-v6-MDe">
-                                <rect key="frame" x="9" y="526" width="350" height="38"/>
+                                <rect key="frame" x="6" y="483" width="350" height="38"/>
                                 <state key="normal" title="Do Something" backgroundImage="whiteButton"/>
                                 <state key="highlighted" backgroundImage="blueButton"/>
                                 <connections>
@@ -135,6 +135,9 @@
                             <constraint firstItem="ydg-sJ-vHd" firstAttribute="trailing" secondItem="yYY-v6-MDe" secondAttribute="trailing" id="xOn-K9-BQA"/>
                             <constraint firstItem="yYY-v6-MDe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-7" id="xdk-XS-DfW"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="E18-Ti-dJf" appends="YES" id="yVu-2H-KSC"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="doSomethingButton" destination="yYY-v6-MDe" id="nnM-FN-dBO"/>
@@ -146,6 +149,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="E18-Ti-dJf"/>
             </objects>
             <point key="canvasLocation" x="-162.40000000000001" y="115.59220389805098"/>
         </scene>

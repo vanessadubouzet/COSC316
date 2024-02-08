@@ -27,7 +27,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func textFieldDoneEditing(sender:UITextField) {
+        sender.resignFirstResponder()
+    }
     
+    @IBAction func onTapGestureRecognized(_sender: AnyObject) {
+        nameField.resignFirstResponder()
+        numberField.resignFirstResponder()
+    }
     
 }
 
