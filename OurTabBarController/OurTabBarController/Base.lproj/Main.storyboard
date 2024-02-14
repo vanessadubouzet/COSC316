@@ -74,8 +74,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Page 1" id="N3E-6N-AFb"/>
                     <connections>
+                        <outlet property="view1DisplayLabel" destination="d6D-sc-a8l" id="g46-8H-ytB"/>
                         <outlet property="view1Textfield" destination="aSe-zN-q30" id="8XP-GG-VL3"/>
-                        <outlet property="view1Textlabel" destination="d6D-sc-a8l" id="Uw7-8p-06W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ocn-Ch-h7f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
