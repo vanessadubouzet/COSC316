@@ -2,68 +2,67 @@
 //  ViewController.swift
 //  BunniesHop
 //
+// Created by Vanessa Dubouzet on 2024-02-14.
+//
 
 import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var bunnyView1: UIImageView!
-    @IBOutlet weak var bunnyView2: UIImageView!
-    @IBOutlet weak var bunnyView3: UIImageView!
-    @IBOutlet weak var bunnyView4: UIImageView!
     @IBOutlet weak var bunnyView5: UIImageView!
-    @IBOutlet weak var speedSlider: UISlider!
-    @IBOutlet weak var speedStepper: UIStepper!
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var hopsPerSecond: UILabel!
     @IBOutlet weak var toggleButton: UIButton!
     
-    
+    var isAnimating = false
+
     @IBAction func setSpeed(_ sender: Any) {
-    bunnyView1.animationDuration=TimeInterval(2.0-speedSlider.value)
+        let speedValue: Float
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            speedValue = 0.5
+        case 1:
+            speedValue = 0.75
+        case 2:
+            speedValue = 1.0
+        case 3:
+            speedValue = 1.25
+        case 4:
+            speedValue = 1.5
+        default:
+            speedValue = 1.0
+        }
         
-        bunnyView2.animationDuration = bunnyView1.animationDuration+TimeInterval(arc4random_uniform(10))/10
+        let duration = TimeInterval(2.0 - speedValue)
+        bunnyView1.animationDuration = duration
+        bunnyView5.animationDuration = duration
+        if isAnimating {
+            bunnyView1.startAnimating()
+            bunnyView5.startAnimating()
+        }
         
-        bunnyView3.animationDuration = bunnyView1.animationDuration+TimeInterval(arc4random_uniform(10))/10
-        
-        bunnyView4.animationDuration = bunnyView1.animationDuration+TimeInterval(arc4random_uniform(10))/10
-        
-        bunnyView5.animationDuration = bunnyView1.animationDuration+TimeInterval(arc4random_uniform(10))/10
-        
-        bunnyView1.startAnimating()
-        bunnyView2.startAnimating()
-        bunnyView3.startAnimating()
-        bunnyView4.startAnimating()
-        bunnyView5.startAnimating()
-        
-        toggleButton.setTitle("Sit Still!", for: UIControl.State())
-        let hopRateString=String(format: "%1.2f hps", 1/(2-speedSlider.value))
-        hopsPerSecond.text=hopRateString
+        let hopRateString = String(format: "%1.2f hps", 1 / (2 - speedValue))
+        hopsPerSecond.text = hopRateString
     }
+    
     @IBAction func toggleAnimation(_ sender: Any) {
-        if (bunnyView1.isAnimating) {
+        if isAnimating {
             bunnyView1.stopAnimating()
-            bunnyView2.stopAnimating()
-            bunnyView3.stopAnimating()
-            bunnyView4.stopAnimating()
             bunnyView5.stopAnimating()
-            toggleButton.setTitle("Hop!", for: UIControl.State())
+            toggleButton.setTitle("Hop!", for: .normal)
         } else {
             bunnyView1.startAnimating()
-            bunnyView2.startAnimating()
-            bunnyView3.startAnimating()
-            bunnyView4.startAnimating()
             bunnyView5.startAnimating()
-            toggleButton.setTitle("Sit Still!", for: UIControl.State())
+            toggleButton.setTitle("Sit Still!", for: .normal)
         }
-    }
-    @IBAction func incrementSpeed(_ sender: Any) {
-        speedSlider.value=Float(speedStepper.value)
-        setSpeed(speedSlider ?? 1)
-        
+        isAnimating = !isAnimating
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view, typically from a nib
+        
         let hopAnimation: [UIImage] = [
             UIImage(named: "frame-1")!,
             UIImage(named: "frame-2")!,
@@ -86,23 +85,40 @@ class ViewController: UIViewController {
             UIImage(named: "frame-19")!,
             UIImage(named: "frame-20")!
         ]
-        bunnyView1.animationImages=hopAnimation
-        bunnyView2.animationImages=hopAnimation
-        bunnyView3.animationImages=hopAnimation
-        bunnyView4.animationImages=hopAnimation
-        bunnyView5.animationImages=hopAnimation
-        bunnyView1.animationDuration=1.0
-        bunnyView2.animationDuration=1.0
-        bunnyView3.animationDuration=1.0
-        bunnyView4.animationDuration=1.0
-        bunnyView5.animationDuration=1.0
+        
+        let fallAnimation: [UIImage] = [
+            UIImage(named: "frame-15")!,
+            UIImage(named: "frame-16")!,
+            UIImage(named: "frame-17")!,
+            UIImage(named: "frame-18")!,
+            UIImage(named: "frame-19")!,
+            UIImage(named: "frame-20")!,
+            UIImage(named: "frame-1")!,
+            UIImage(named: "frame-2")!,
+            UIImage(named: "frame-3")!,
+            UIImage(named: "frame-4")!,
+            UIImage(named: "frame-5")!,
+            UIImage(named: "frame-6")!,
+            UIImage(named: "frame-7")!,
+            UIImage(named: "frame-8")!,
+            UIImage(named: "frame-9")!,
+            UIImage(named: "frame-10")!,
+            UIImage(named: "frame-11")!,
+            UIImage(named: "frame-12")!,
+            UIImage(named: "frame-13")!,
+            UIImage(named: "frame-14")!
+        ]
+        
+        bunnyView1.animationImages = hopAnimation
+        bunnyView5.animationImages = fallAnimation
+        bunnyView1.animationDuration = 1.0
+        bunnyView5.animationDuration = 1.0
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // Dispose of any resources that can be recreated
     }
-
-
 }
+
 
