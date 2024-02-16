@@ -37,15 +37,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Template:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QqU-PT-DJS">
-                                <rect key="frame" x="32" y="483" width="105" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Story:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QqU-PT-DJS">
+                                <rect key="frame" x="32" y="483" width="63" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Story:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziO-cs-fZW">
-                                <rect key="frame" x="32" y="326" width="63" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Template:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziO-cs-fZW">
+                                <rect key="frame" x="32" y="326" width="105" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -55,25 +55,31 @@
                                 <rect key="frame" x="148" y="107" width="206" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="textFieldDoneEditingWithSender:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="5qS-OZ-pfg"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="A verb" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RFZ-pE-vO6">
                                 <rect key="frame" x="148" y="176" width="206" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="textFieldDoneEditingWithSender:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="b3F-eJ-cwu"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="A small number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Gl-QX-fBn">
                                 <rect key="frame" x="148" y="244" width="206" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xDg-9z-a4S">
                                 <rect key="frame" x="32" y="362" width="328" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.80882198520445303" blue="0.96255873099068789" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <string key="text">The iOS developers descended upon &lt;place&gt;. They vowed to &lt;verb&gt; night and day, until all &lt;number&gt; Andriod users came to their senses. &lt;place&gt; would never be the same again.</string>
+                                <string key="text">The iOS developers descended upon &lt;place&gt;. They vowed to &lt;verb&gt; night and day, until all &lt;number&gt; Android users came to their senses. &lt;place&gt; would never be the same again.</string>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -93,13 +99,35 @@
                                 <buttonConfiguration key="configuration" style="gray" title="Create Story">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="createStoryButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c55-pW-74Y"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="1Sy-O5-RCb" appends="YES" id="nmg-n7-9D5"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="numberLabel" destination="Wd0-DS-qyy" id="HJN-6D-xpP"/>
+                        <outlet property="numberTextField" destination="5Gl-QX-fBn" id="9Ka-Yd-ayq"/>
+                        <outlet property="placeLabel" destination="KXD-dA-utk" id="8D2-1G-EwX"/>
+                        <outlet property="placeTextField" destination="65v-qv-RwZ" id="BYC-nZ-vgI"/>
+                        <outlet property="storyTextView" destination="V5z-Uk-u5z" id="8GS-9c-kRr"/>
+                        <outlet property="templateTextView" destination="xDg-9z-a4S" id="bOb-yC-5AB"/>
+                        <outlet property="verbLabel" destination="mtK-fs-Wj5" id="dHY-No-jrf"/>
+                        <outlet property="verbTextField" destination="RFZ-pE-vO6" id="VY5-6E-nZR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1Sy-O5-RCb">
+                    <connections>
+                        <action selector="onTapGestureRecognizedWith_sender:" destination="BYZ-38-t0r" id="Ins-Ji-cjn"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-77.099236641221367" y="3.5211267605633805"/>
         </scene>
