@@ -53,7 +53,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Show Next View"/>
                                 <connections>
-                                    <segue destination="lS8-pU-nYa" kind="show" id="sVS-eD-U6u"/>
+                                    <segue destination="lS8-pU-nYa" kind="show" identifier="SegueToSecondVC" id="sVS-eD-U6u"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -61,15 +61,19 @@
                         <color key="backgroundColor" red="0.6109064443143164" green="0.95324931644203725" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" id="vDv-wN-5Zz"/>
+                    <connections>
+                        <outlet property="view1Label" destination="slv-Om-yAB" id="8jS-zZ-VTt"/>
+                        <outlet property="view1Textfield" destination="Kyv-wL-8xm" id="iZj-G7-oGw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQP-Do-o4w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="212.97709923664121" y="13.380281690140846"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="olA-Jp-FD6">
             <objects>
-                <viewController id="lS8-pU-nYa" sceneMemberID="viewController">
+                <viewController id="lS8-pU-nYa" customClass="SecondViewController" customModule="NavigationController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gZS-ys-Ba2">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,6 +98,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="I8F-dr-G5l"/>
+                    <connections>
+                        <outlet property="view2Label" destination="bfB-GL-nAD" id="mCU-KS-t3Z"/>
+                        <outlet property="view2Textfield" destination="zQZ-VS-qpd" id="NX3-tq-JFS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="226-Vu-02A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
