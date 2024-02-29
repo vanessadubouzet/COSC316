@@ -26,9 +26,6 @@
                                 <color key="backgroundColor" red="0.61720838010000001" green="0.85786025269999999" blue="0.96611279250000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Select"/>
-                                <connections>
-                                    <action selector="selectPicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DNU-xu-iWu"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
