@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MapItem" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r5T-vD-pfL">
+                                <rect key="frame" x="64" y="50" width="247" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZHU-Vm-sGW">
+                                <rect key="frame" x="64" y="88" width="247" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZhZ-ND-XKV">
+                                <rect key="frame" x="64" y="126" width="247" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NDM-2T-clc">
+                                <rect key="frame" x="64" y="164" width="247" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29w-Bs-byz">
+                                <rect key="frame" x="138.5" y="232" width="98" height="30"/>
+                                <state key="normal" title="Get Directions"/>
+                                <connections>
+                                    <action selector="getDirections:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xZj-tz-qDF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="29w-Bs-byz" firstAttribute="top" secondItem="NDM-2T-clc" secondAttribute="bottom" constant="38" id="1YB-Fv-HlZ"/>
+                            <constraint firstItem="r5T-vD-pfL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4bo-CW-J3a"/>
+                            <constraint firstItem="ZhZ-ND-XKV" firstAttribute="trailing" secondItem="NDM-2T-clc" secondAttribute="trailing" id="5J1-qZ-3bA"/>
+                            <constraint firstItem="ZHU-Vm-sGW" firstAttribute="top" secondItem="r5T-vD-pfL" secondAttribute="bottom" constant="8" symbolic="YES" id="893-Gj-Y4V"/>
+                            <constraint firstItem="ZhZ-ND-XKV" firstAttribute="top" secondItem="ZHU-Vm-sGW" secondAttribute="bottom" constant="8" symbolic="YES" id="EFW-xI-yxz"/>
+                            <constraint firstItem="29w-Bs-byz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eyb-aI-39F"/>
+                            <constraint firstItem="NDM-2T-clc" firstAttribute="top" secondItem="ZhZ-ND-XKV" secondAttribute="bottom" constant="8" symbolic="YES" id="GqF-zY-Np3"/>
+                            <constraint firstItem="r5T-vD-pfL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="Jvb-Nf-Izu"/>
+                            <constraint firstItem="ZHU-Vm-sGW" firstAttribute="trailing" secondItem="ZhZ-ND-XKV" secondAttribute="trailing" id="KdA-dW-4uI"/>
+                            <constraint firstItem="r5T-vD-pfL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="Xxl-jL-ICQ"/>
+                            <constraint firstItem="ZhZ-ND-XKV" firstAttribute="leading" secondItem="NDM-2T-clc" secondAttribute="leading" id="if3-NV-Xhf"/>
+                            <constraint firstItem="ZHU-Vm-sGW" firstAttribute="leading" secondItem="ZhZ-ND-XKV" secondAttribute="leading" id="nCT-wu-N1w"/>
+                            <constraint firstItem="NDM-2T-clc" firstAttribute="centerX" secondItem="29w-Bs-byz" secondAttribute="centerX" id="pvb-R9-41G"/>
+                            <constraint firstItem="r5T-vD-pfL" firstAttribute="trailing" secondItem="ZHU-Vm-sGW" secondAttribute="trailing" id="s3h-Ia-XWb"/>
+                            <constraint firstItem="r5T-vD-pfL" firstAttribute="leading" secondItem="ZHU-Vm-sGW" secondAttribute="leading" id="sOB-fg-vb0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="address" destination="r5T-vD-pfL" id="VQe-Zu-TA2"/>
+                        <outlet property="city" destination="ZHU-Vm-sGW" id="9x1-Qo-wiH"/>
+                        <outlet property="state" destination="ZhZ-ND-XKV" id="yTo-Re-BIe"/>
+                        <outlet property="zip" destination="NDM-2T-clc" id="U44-DR-0t7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
